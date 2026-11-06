@@ -16,6 +16,7 @@
             --text-muted: #94a3b8;
             --border-color: #334155;
             --accent: #06b6d4;
+            --whatsapp: #25d366;
         }
 
         * {
@@ -286,7 +287,7 @@
             align-items: center;
         }
 
-        .contact-info-items a, .contact-info-items span {
+        .contact-info-items a {
             color: var(--text-color);
             text-decoration: none;
             font-size: 1.05rem;
@@ -299,6 +300,10 @@
 
         .contact-info-items a:hover {
             color: var(--accent);
+        }
+
+        .contact-info-items a.whatsapp-link:hover {
+            color: var(--whatsapp);
         }
 
         footer {
@@ -440,11 +445,11 @@
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-container">
-            <p>I am currently available for freelance projects and remote opportunities. Feel free to reach out via email, phone, or connect on GitHub!</p>
+            <p>I am currently available for freelance projects and remote opportunities. Feel free to reach out via email, WhatsApp, or connect on GitHub!</p>
             
             <div class="contact-info-items">
                 <a href="mailto:yassermouddy810@gmail.com"><i class="fas fa-envelope" style="color: var(--accent);"></i> yassermouddy810@gmail.com</a>
-                <a href="tel:+212663403949"><i class="fas fa-phone" style="color: var(--accent);"></i> +212 6 63 40 39 49</a>
+                <a href="https://wa.me/212663403949" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp" style="color: var(--whatsapp); font-size: 1.2rem;"></i> +212 6 63 40 39 49</a>
             </div>
 
             <div style="display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem; margin-top: 1.5rem;">
