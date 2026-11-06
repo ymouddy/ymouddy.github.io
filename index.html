@@ -3,253 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yasser Mouddy | Full Stack Developer</title>
+    <title>Yasser Mouddy | Full-Stack Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --text-primary: #f3f4f6;
-            --text-secondary: #9ca3af;
-            --accent-cyan: #06b6d4;
-            --accent-blue: #3b82f6;
-            --border-color: #1f2937;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --accent: #06b6d4;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
+
         body {
             background-color: var(--bg-color);
-            color: var(--text-primary);
+            color: var(--text-color);
             line-height: 1.6;
         }
+
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(11, 15, 25, 0.9);
+            background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 5%;
+            padding: 1.2rem 8%;
+            z-index: 1000;
         }
+
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
         }
+
         .logo span {
-            color: var(--accent-cyan);
+            color: var(--accent);
         }
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
+
         nav a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
+
         nav a:hover {
-            color: var(--accent-cyan);
+            color: var(--accent);
         }
+
         section {
-            padding: 7rem 10% 4rem 10%;
+            padding: 7rem 8% 5rem 8%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
+
         .hero {
             text-align: center;
+            align-items: center;
         }
+
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
             margin: 0 auto 2rem auto;
         }
+
         .btn-group {
             display: flex;
             gap: 1rem;
             justify-content: center;
         }
+
         .btn {
             padding: 0.8rem 1.8rem;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: bold;
             transition: all 0.3s ease;
         }
+
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            background: var(--primary);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
         }
+
         .btn-primary:hover {
-            opacity: 0.9;
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
-        .btn-secondary {
-            background: transparent;
+
+        .btn-outline {
             border: 1px solid var(--border-color);
-            color: var(--text-primary);
+            color: var(--text-color);
+            background: transparent;
         }
-        .btn-secondary:hover {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
         }
+
         .section-title {
             font-size: 2.2rem;
-            margin-bottom: 2.5rem;
+            font-weight: 700;
             text-align: center;
+            margin-bottom: 3rem;
             position: relative;
         }
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
         }
+
         .skill-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 8px;
+            padding: 1.8rem;
+            border-radius: 10px;
             transition: transform 0.3s, border-color 0.3s;
         }
+
         .skill-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-cyan);
+            border-color: var(--accent);
         }
+
         .skill-card h3 {
-            color: var(--accent-cyan);
+            color: var(--accent);
+            font-size: 1.1rem;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
         .skill-card ul {
             list-style: none;
-            color: var(--text-secondary);
+            color: var(--text-muted);
         }
+
         .skill-card li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
         }
+
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
+
         .project-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: transform 0.3s, border-color 0.3s;
         }
+
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-cyan);
+            border-color: var(--accent);
         }
+
         .project-content {
-            padding: 1.5rem;
+            padding: 1.8rem;
         }
+
         .project-content h3 {
+            font-size: 1.3rem;
             margin-bottom: 0.8rem;
         }
+
         .project-content p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
-        .project-links {
+
+        .tech-tags {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
         }
+
+        .tech-tag {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            padding: 1.2rem 1.8rem;
+            background: rgba(15, 23, 42, 0.4);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1.2rem;
+        }
+
         .project-links a {
-            color: var(--accent-cyan);
+            color: var(--text-color);
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: bold;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s;
         }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 12px;
+        }
+
+        .contact-container p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
             background: var(--card-bg);
             border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
+
         @media (max-width: 768px) {
             nav ul { display: none; }
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.3rem; }
+            section { padding: 6rem 5% 3rem 5%; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="logo">Yasser<span>.dev</span></div>
+        <a href="#home" class="logo">Yasser<span>.dev</span></a>
         <nav>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projects">Projets</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
-        <h1>Salut, je suis Yasser Mouddy</h1>
-        <p>Développeur Web Full Stack passionné, spécialisé dans la création d'applications web performantes, modernes et évolutives.</p>
+        <h1>Hi, I'm Yasser Mouddy</h1>
+        <p>Full-Stack Web Developer dedicated to building responsive, high-performance web applications and clean user interfaces.</p>
         <div class="btn-group">
-            <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-            <a href="#contact" class="btn btn-secondary">Contactez-moi</a>
+            <a href="#projects" class="btn btn-primary">View My Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
     </section>
 
     <section id="about">
-        <h2 class="section-title">À propos de moi</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto; color: var(--text-secondary);">
-            Titulaire d'une Licence Professionnelle en Développement Web Full Stack. Doté d'une expérience pratique dans le développement d'applications web, les tests, la correction de bugs et la gestion de projets. Autonome et motivé pour relever de nouveaux défis techniques.
-        </p>
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 750px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 1.05rem;">
+            <p style="margin-bottom: 1rem;">I am a Full-Stack Web Developer holding a Professional Degree in Full-Stack Web Development. I focus on developing robust web applications, writing clean code, and solving complex technical challenges.</p>
+            <p>Whether it's building interactive front-end components with React or managing backend data, I am committed to delivering reliable, professional results for clients and teams.</p>
+        </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">Compétences Techniques</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <h3>Langages & Frameworks</h3>
+                <h3><i class="fas fa-code"></i> Frontend & Languages</h3>
                 <ul>
-                    <li>JavaScript, React</li>
-                    <li>Java, Spring MVC</li>
-                    <li>HTML5, CSS3, WordPress</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>Python & Java</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h3>Bases de Données</h3>
+                <h3><i class="fas fa-server"></i> Backend & CMS</h3>
+                <ul>
+                    <li>Spring MVC</li>
+                    <li>WordPress</li>
+                    <li>RESTful APIs</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-database"></i> Databases</h3>
                 <ul>
                     <li>MySQL</li>
                     <li>PostgreSQL</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h3>Outils & Environnements</h3>
+                <h3><i class="fas fa-tools"></i> Tools & Environment</h3>
                 <ul>
                     <li>Git & GitHub</li>
-                    <li>VS Code, IntelliJ IDEA</li>
+                    <li>VS Code & IntelliJ IDEA</li>
                     <li>WampServer</li>
                 </ul>
             </div>
@@ -257,54 +364,71 @@
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Mes Projets GitHub</h2>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-content">
-                    <h3>Application Garage Automobile</h3>
-                    <p>Développement d'une application web pour la prise de rendez-vous clients, gestion du stock de pièces et suivi des réparations.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ymouddy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <h3>Garage Auto Web App</h3>
+                    <p>Web application designed for a car garage management system, handling client appointments, spare parts stock, and repair tracking.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring MVC</span>
+                        <span class="tech-tag">MySQL</span>
                     </div>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Marketplace Web App</h3>
-                    <p>Développement de la partie front-end d'une application web de type marketplace avec intégration de composants dynamiques.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ymouddy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
+                <div class="project-links">
+                    <a href="https://github.com/ymouddy" target="_blank"><i class="fab fa-github"></i> Repository</a>
                 </div>
             </div>
+
             <div class="project-card">
                 <div class="project-content">
-                    <h3>Portfolio Personnel</h3>
-                    <p>Portfolio professionnel moderne et responsive hébergé sur GitHub Pages.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ymouddy/ymouddy.github.io" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://ymouddy.github.io" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <h3>Marketplace Frontend</h3>
+                    <p>Front-end development for a modern marketplace web application, focusing on dynamic layouts, component structures, and responsive design.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">CSS3</span>
                     </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ymouddy" target="_blank"><i class="fab fa-github"></i> Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Professional Portfolio</h3>
+                    <p>Modern dark-themed developer portfolio showcasing real projects, technical skills, and background, deployed on GitHub Pages.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ymouddy/ymouddy.github.io" target="_blank"><i class="fab fa-github"></i> Repository</a>
+                    <a href="https://ymouddy.github.io" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" style="min-height: 60vh;">
-        <h2 class="section-title">Contactez-moi</h2>
-        <div style="text-align: center; color: var(--text-secondary);">
-            <p><i class="fas fa-envelope"></i> yassermouddy810@gmail.com</p>
-            <p><i class="fas fa-phone"></i> +212 6 63 40 39 49</p>
-            <p><i class="fas fa-map-marker-alt"></i> Casablanca, Maroc</p>
-            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem;">
-                <a href="https://github.com/ymouddy" target="_blank" style="color: var(--text-primary);"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" style="color: var(--text-primary);"><i class="fab fa-linkedin"></i></a>
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <p>I am currently available for freelance projects and remote opportunities. Feel free to reach out via email or connect on GitHub!</p>
+            <a href="mailto:yassermouddy810@gmail.com" class="btn btn-primary" style="display: inline-block; margin-bottom: 1.5rem;"><i class="fas fa-envelope"></i> yassermouddy810@gmail.com</a>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem; margin-top: 1rem;">
+                <a href="https://github.com/ymouddy" target="_blank" style="color: var(--text-color);"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" style="color: var(--text-color);"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Yasser Mouddy. Tous droits réservés.</p>
+        <p>&copy; 2026 Yasser Mouddy. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
